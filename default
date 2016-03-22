@@ -1,0 +1,12 @@
+server {
+        listen 8080 default_server;
+        listen [::]:8080 default_server;
+include conf.d/drop;
+ root /var/www/html;
+     index index.php index.html index.htm index.nginx-debian.html;
+        server_name _;
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+
