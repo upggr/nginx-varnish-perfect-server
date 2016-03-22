@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Welcome to the installation.."
 echo "Creating a new user "
 read -p 'Username: ' uservar
