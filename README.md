@@ -10,7 +10,7 @@ When the server reboots, ssh on port 9022 as root and run the following to creat
 
 Then, just visit domain.com (provided you have pointed dns to your ip) and point to your mysql server. 
 
-Run './install.sh' for as many domains as needed.
+Run `./install.sh` for as many domains as needed.
 
 Here you have it, 1.000.000 hits/per day capable wordpress instance for 10$
 
