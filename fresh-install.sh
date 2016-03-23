@@ -44,9 +44,8 @@ sudo ufw allow 10090:10100/tcp
 sudo ufw enable
 rm default
 rm default.vcl
-rm nginx-installer.sh
+rm fresh-install.sh
 rm nginx.conf
 rm varnish
 rm vsftpd.conf
-rm wordpress.template
 reboot

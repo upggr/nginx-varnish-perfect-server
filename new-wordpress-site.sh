@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author: Ioannis Kokkinis
-# Usage : newsite.sh yoursite.com
+# Usage : new-wordpress-site.sh yoursite.com
 NGINX_ALL_VHOSTS='/etc/nginx/sites-available'
 NGINX_ENABLED_VHOSTS='/etc/nginx/sites-enabled'
 WEB_DIR='/var/www'
@@ -9,7 +9,7 @@ NGINX=`sudo which nginx`
 CURRENT_DIR=`dirname $0`
  
 if [ -z $1 ]; then
-	echo "Usage newsite.sh domain.com"
+	echo "Usage new-wordpress-site.sh domain.com"
 	exit 1
 fi
 DOMAIN=$1
