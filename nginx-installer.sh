@@ -7,9 +7,13 @@ sudo useradd $uservar
 echo "Setting the user's password.."
 passwd $uservar
 echo "adding user to sudo"
-sudo gpasswd -a $uservar sudo
+sudo usermod -a -G sudo $uservar
 sudo apt-get update -y
 sudo apt-get install nginx php5-fpm php5-mysql php5-cli unzip varnish vsftpd ufw -y
+sudo service php5-fpm restart
+sudo service vsftpd restart
+sudo service nginx restart
+sudo service varnish restart
 sudo usermod -a -G www-data  $uservar
 rm /etc/nginx/sites-available/default
 cp default /etc/nginx/sites-available/default
