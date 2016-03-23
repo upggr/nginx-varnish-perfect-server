@@ -1,13 +1,8 @@
 #!/bin/bash
 echo "Welcome to the installation.."
 echo "Creating a new user.. "
-read -p 'Username: ' nginxuser
-echo "You entered: $uservar - setting up user..."
-sudo useradd nginxuser
-echo "Setting the user's password.."
-passwd nginxuser
-echo "adding user to sudo"
-sudo usermod -a -G sudo nginxuser
+adduser "nginxuser" sudo
+sudo adduser nginxuser sudo
 sudo apt-get update -y
 sudo apt-get install nginx php5-fpm php5-mysql php5-cli unzip varnish vsftpd ufw -y
 sudo service php5-fpm restart
