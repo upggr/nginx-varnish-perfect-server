@@ -49,4 +49,5 @@ rm nginx.conf
 rm varnish
 rm vsftpd.conf
 rm wordpress.template
+rm cloudflare
 reboot
