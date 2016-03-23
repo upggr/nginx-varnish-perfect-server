@@ -20,6 +20,8 @@ echo "Changing ssh port to 9022 - NOTE THAT - NO MORE 22"
 sed -i 's/22/9022/g' /etc/ssh/sshd_config
 rm /etc/default/varnish
 cp varnish /etc/default/varnish
+rm cloudflare /etc/nginx/conf.d/cloudflare
+cp cloudflare /etc/nginx/conf.d/cloudflare
 echo "varnish installed on port 80"
 rm /etc/varnish/default.vcl
 cp default.vcl /etc/varnish/default.vcl
@@ -29,6 +31,8 @@ echo "ftp server installed on port 21"
 sudo service php5-fpm restart
 sudo service vsftpd restart
 sudo service nginx restart
+cp /lib/systemd/system/varnish.service /etc/systemd/system/
+sed -i 's/6081/80/g' /etc/systemd/system/varnish.service
 sudo service varnish restart
 sudo apt-get install ufw -y
 sudo ufw default deny incoming

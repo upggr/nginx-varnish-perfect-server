@@ -21,7 +21,7 @@ else
 	echo "is this a domain?"
 	exit 1
 fi
-echo "Specify the user (the one you used in the install script and you are probably logged in as now..)"
+echo "Specify the user (just type nginxuser)"
 read USERNAME
 sudo mkdir /var/www/$DOMAIN
 sudo mkdir /var/www/$DOMAIN/public_html
@@ -31,7 +31,7 @@ sudo $SED -i "s/DOMAIN/$DOMAIN/g" $CONFIG
 sudo $SED -i "s#ROOT#$WEB_DIR/$DOMAIN\/public_html#g" $CONFIG
  
 sudo usermod -aG $USERNAME www-data
-sudo chmod g+rxs $WEB_DIR/$USERNAME
+sudo chmod g+rxs $WEB_DIR/$DOMAIN
 sudo chmod 600 $CONFIG
  
 sudo $NGINX -t

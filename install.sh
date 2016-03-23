@@ -7,6 +7,7 @@ wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/varnish
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/vsftpd.conf
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/wordpress.template
+wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/cloudflare
 chmod a+x newsite.sh
 chmod a+x nginx-installer.sh
 sudo sh ./nginx-installer.sh

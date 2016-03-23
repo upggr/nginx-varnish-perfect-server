@@ -22,9 +22,6 @@ acl purge {
 # ##########################################################
 sub vcl_recv {
 
- if (req.http.host ~ "(getfullrss.upg.gr|www.getfullrss.upg.gr)") {
-     return(pass);
-   }
 
 # set realIP by trimming CloudFlare IP which will be used for various checks
 set req.http.X-Actual-IP = regsub(req.http.X-Forwarded-For, "[, ].*$", "");

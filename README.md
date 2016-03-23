@@ -3,8 +3,6 @@
 Usage :
 Head to [digital ocean](https://m.do.co/c/6e83df0e17c6) or wherever, create a 5-10$ server, login as root, and run the following :
 <br>
-`sudo apt-get install curl -y`
-<br>
 `curl -sL https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/install.sh | sudo bash -`
 
 When the server reboots, ssh on port 9022 as root and run the following to create your first wordpess installation :
