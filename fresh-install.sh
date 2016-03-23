@@ -4,7 +4,7 @@ echo "Creating a new user.. "
 sudo adduser nginxuser
 sudo adduser nginxuser sudo
 sudo apt-get update -y
-sudo apt-get install nginx php5-fpm php5-mysql php5-cli unzip varnish vsftpd ufw -y
+sudo apt-get install nginx php5-fpm php5-mysql php5-cli unzip varnish vsftpd ufw php5-curl -y
 sudo service php5-fpm restart
 sudo service vsftpd restart
 sudo service nginx restart
@@ -49,6 +49,7 @@ rm nginx.conf
 rm varnish
 rm vsftpd.conf
 rm cloudflare
+usermod -g www-data nginxuser
 sudo apt-get update -y
 reboot
 
