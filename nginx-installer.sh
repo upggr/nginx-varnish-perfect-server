@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Welcome to the installation.."
 echo "Creating a new user.. "
-adduser "nginxuser" sudo
+sudo adduser nginxuser
 sudo adduser nginxuser sudo
 sudo apt-get update -y
 sudo apt-get install nginx php5-fpm php5-mysql php5-cli unzip varnish vsftpd ufw -y
@@ -38,4 +38,11 @@ sudo ufw allow 80
 sudo ufw allow 9022
 sudo ufw allow 10090:10100/tcp
 sudo ufw enable
+rm default
+rm default.vcl
+rm nginx-installer.sh
+rm nginx.conf
+rm varnish
+rm vsftpd.conf
+rm wordpress.template
 reboot
