@@ -13,3 +13,6 @@ Then, just visit domain.com (provided you have pointed dns to your ip) and point
 Run ./install.sh for as many domains as needed.
 
 Here you have it, 1.000.000 hits/per day capable wordpress instance for 10$
+
+-- Scripts are still under development --
+-- You need your own mysql server, this script does not install mysql --
