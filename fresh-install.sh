@@ -49,5 +49,6 @@ rm nginx.conf
 rm varnish
 rm vsftpd.conf
 rm cloudflare
+sudo apt-get update -y
 reboot
 
