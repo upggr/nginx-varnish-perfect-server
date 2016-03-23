@@ -26,7 +26,7 @@ read USERNAME
 sudo mkdir /var/www/$DOMAIN
 sudo mkdir /var/www/$DOMAIN/public_html
 CONFIG=$NGINX_ALL_VHOSTS/$DOMAIN.conf
-sudo cp $CURRENT_DIR/wordpress.template $CONFIG
+sudo cp $CURRENT_DIR/simple.template $CONFIG
 sudo $SED -i "s/DOMAIN/$DOMAIN/g" $CONFIG
 sudo $SED -i "s#ROOT#$WEB_DIR/$DOMAIN\/public_html#g" $CONFIG
  
