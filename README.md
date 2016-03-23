@@ -12,7 +12,9 @@ If you just want to install a simple site other than wordpress just run :<br> `.
 
 Then, just visit domain.com (provided you have pointed dns to your ip) and point to your mysql server. 
 
-Run `./install.sh` for as many domains as needed.
+Run the above commands for as many domains as you need. <br>
+There is some basic hardening on this configuration, and a user is created for you to use for the ftp server. The user is : `nginxuser`<br>
+You can run `sudo passwd username` as root to set the user's password and use this instead of root or for your ftp.
 
 Here you have it, 1.000.000 hits/per day capable wordpress instance for 10$
 <br>
