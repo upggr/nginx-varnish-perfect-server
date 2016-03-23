@@ -9,3 +9,4 @@ wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/wordpress.template
 chmod +x newsite.sh
 chmod +x nginx-installer.sh
+./nginx-installer.sh

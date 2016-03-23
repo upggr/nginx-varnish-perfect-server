@@ -5,11 +5,12 @@ read -p 'Username: ' uservar
 echo "You entered: $uservar - setting up user..."
 sudo useradd $uservar
 echo "Setting the user's password.."
-passwd uservar
+passwd $uservar
 echo "adding user to sudo"
 sudo gpasswd -a $uservar sudo
-sudo usermod -a -G www-data  uservar
-sudo apt-get install nginx php5-fpm php5-mysql php5-cli unzip varnish vsftpd -y
+sudo apt-get update -y
+sudo apt-get install nginx php5-fpm php5-mysql php5-cli unzip varnish vsftpd ufw -y
+sudo usermod -a -G www-data  $uservar
 rm /etc/nginx/sites-available/default
 cp default /etc/nginx/sites-available/default
 rm /etc/nginx/nginx.conf
@@ -30,11 +31,12 @@ sudo service php5-fpm restart
 sudo service vsftpd restart
 sudo service nginx restart
 sudo service varnish restart
-sudo service iptables restart
-sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-sudo iptables -I INPUT -p tcp --dport 21 -j ACCEPT
-sudo iptables -I INPUT -p tcp --dport 9022 -j ACCEPT
-sudo iptables -A INPUT -p tcp --dport 22 -j DROP
-sudo iptables -I INPUT -p tcp --destination-port 10090:10100 -j ACCEPT
-sudo iptables-save
+sudo apt-get install ufw -y
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow 9022
+sudo ufw allow 80
+sudo ufw allow 9022
+sudo ufw allow 10090:10100/tcp
+sudo ufw enable
 reboot
