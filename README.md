@@ -10,6 +10,11 @@ When the server reboots, ssh on port 9022 as root and run the following to creat
 
 If you just want to install a simple site other than wordpress just run : `./new-simple-site yourdomain.com`
 
-Then, just visit domain.com (provided you have pointed dns to your ip) and point to your mysql server. Run the same for as may domains as needed.
+Then, just visit domain.com (provided you have pointed dns to your ip) and point to your mysql server. 
+
+Run `./install.sh` for as many domains as needed.
 
 Here you have it, 1.000.000 hits/per day capable wordpress instance for 10$
+
+-- Scripts are still under development --
+-- You need your own mysql server, this script does not install mysql --
