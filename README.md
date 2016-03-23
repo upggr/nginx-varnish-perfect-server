@@ -14,7 +14,8 @@ Then, just visit domain.com (provided you have pointed dns to your ip) and point
 
 Run the above commands for as many domains as you need. <br>
 There is some basic hardening on this configuration, and a user is created for you to use for the ftp server. The user is : `nginxuser`<br>
-You can run `sudo passwd username` as root to set the user's password and use this instead of root or for your ftp.
+You can run `sudo passwd username` as root to set the user's password and use this instead of root or for your ftp.<br>
+Obviously you can clone this repo to get the latest installers<br>
 
 Here you have it, 1.000.000 hits/per day capable wordpress instance for 10$
 <br>
