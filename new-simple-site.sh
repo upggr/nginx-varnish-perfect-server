@@ -44,17 +44,6 @@ else
 fi
  
 sudo /etc/init.d/nginx reload
-
-cd /var/www/$DOMAIN/public_html
-wget http://wordpress.org/latest.tar.gz && tar xfz latest.tar.gz
-mv wordpress/* ./
-rmdir ./wordpress/ && rm -f latest.tar.gz
-cd wp-content/plugins/
-rm -rf akismet
-rm hello.php
-cd ..
-cd ..
-echo "define('FS_METHOD', 'direct');" >> wp-config-sample.php
 sudo chown $USERNAME:$USERNAME $WEB_DIR/$DOMAINpublic_html -R
 sudo chmod 755 /var/www
 sudo chmod g+w /var/www -R

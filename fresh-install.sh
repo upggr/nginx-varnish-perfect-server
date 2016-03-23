@@ -48,10 +48,6 @@ rm fresh-install.sh
 rm nginx.conf
 rm varnish
 rm vsftpd.conf
-<<<<<<< HEAD:fresh-install.sh
-reboot
-=======
-rm wordpress.template
 rm cloudflare
 reboot
->>>>>>> origin/master:nginx-installer.sh
+
