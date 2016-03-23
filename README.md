@@ -6,9 +6,9 @@ Head to [digital ocean](https://m.do.co/c/6e83df0e17c6) or wherever, create a 5-
 `curl -sL https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/install.sh | sudo bash -`
 
 When the server reboots, ssh on port 9022 as root and run the following to create your first wordpess installation :<br>
-`./new-wordpress-site yourdomain.com` (replacing with your domain, no www allowed)
+`./new-wordpress-site.sh yourdomain.com` (replacing with your domain, no www allowed)
 
-If you just want to install a simple site other than wordpress just run :<br> `./new-simple-site yourdomain.com`
+If you just want to install a simple site other than wordpress just run :<br> `./new-simple-site.sh yourdomain.com`
 
 Then, just visit domain.com (provided you have pointed dns to your ip) and point to your mysql server. 
 
