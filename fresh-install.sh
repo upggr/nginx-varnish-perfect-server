@@ -28,7 +28,9 @@ cp default.vcl /etc/varnish/default.vcl
 cp /lib/systemd/system/varnish.service /etc/systemd/system/
 sed -i 's/6081/80/g' /etc/systemd/system/varnish.service
 sudo varnish restart
-
+rm /var/www/html/index.nginx-debian.html
+cp index.php /var/www/index.php
+cp default.vcl /etc/varnish/default.vcl
 echo "nginx with php7 installed on port 8080.."
 echo "Changing ssh port to 9022 - NOTE THAT - NO MORE 22"
 sed -i 's/22/9022/g' /etc/ssh/sshd_config
