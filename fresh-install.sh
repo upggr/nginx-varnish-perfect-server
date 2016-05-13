@@ -26,7 +26,7 @@ rm /etc/php/7.0/fpm/pool.d/www.conf
 cp www.conf /etc/php/7.0/fpm/pool.d/www.conf
 sudo service php7.0-fpm restart
 rm /etc/default/varnish
-cp varnish /etc/default/varnish
+cp varnish /etc/default/varnish 
 rm /etc/varnish/default.vcl
 cp default.vcl /etc/varnish/default.vcl
 cp /lib/systemd/system/varnish.service /etc/systemd/system/
