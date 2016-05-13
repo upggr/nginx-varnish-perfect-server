@@ -1,5 +1,7 @@
 # nginx-varnish-perfect-server
 NOTICE : i AM ACTIVELY WORKING ON THIS NOW, THINGS MIGHT BE BROKEN
+
+
 Usage :
 Head to [digital ocean](https://m.do.co/c/6e83df0e17c6) or wherever, create a 5-10$ server (UBUNTU 16+), login as root, and run the following :
 <br>
