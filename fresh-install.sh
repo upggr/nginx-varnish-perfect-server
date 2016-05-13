@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Welcome to the installation.."
 sudo apt-get update -y
-sudo apt-get install nginx -y
+sudo apt-get install ssh nginx -y
 sudo apt-get install php7.0-cli php7.0-curl php7.0-dev php7.0-fpm php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-opcache -y
 sudo apt-get install mariadb-server mariadb-client -y
 sudo apt-get install unzip varnish  phpmyadmin ufw  -y
