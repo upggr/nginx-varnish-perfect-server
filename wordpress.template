@@ -7,7 +7,12 @@ server {
     root /var/www/DOMAIN/public_html;
     index index.php;
     add_header Cache-Control "store, must-revalidate, post-check=0, pre-check=0";
-location ~ \.php$ {
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+   location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php5-fpm.sock;
@@ -15,19 +20,19 @@ location ~ \.php$ {
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
     }
-        location ~* ^.*(\.(?:git|svn|htaccess|txt|pot?))$ {
-            return 404;
-        }
-        location ~* \.(?:css|gif|htc|ico|js|jpe?g|png|swf)$ {
-            expires max;
-            log_not_found off;
-            tcp_nodelay off;
-            open_file_cache max=1000 inactive=120s;
-            open_file_cache_valid 45s;
-            open_file_cache_min_uses 2;
-            open_file_cache_errors off;
-        }
-       
-        
+
+    location ~* ^.*(\.(?:git|svn|htaccess|txt|pot?))$ {
+        return 404;
+    }
+
+    location ~* \.(?:css|gif|htc|ico|js|jpe?g|png|swf)$ {
+        expires max;
+        log_not_found off;
+        tcp_nodelay off;
+        open_file_cache max=1000 inactive=120s;
+        open_file_cache_valid 45s;
+        open_file_cache_min_uses 2;
+        open_file_cache_errors off;
+    }
 
 }
