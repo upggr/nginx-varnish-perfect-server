@@ -10,7 +10,7 @@ CURRENT_DIR=`dirname $0`
 WWWUSER=`www-data`
 
 if [ -z $1 ]; then
-	echo "Usage new-wordpress-site.sh domain.com"
+	echo "Usage new-wordpress-site.sh domain.com" 
 	exit 1
 fi
 DOMAIN=$1
