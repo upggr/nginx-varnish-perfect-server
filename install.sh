@@ -3,6 +3,7 @@ wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/default
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/default.vcl
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/fresh-install.sh
+wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/index.php
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/my.cnf
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/new-simple-site.sh
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/new-wordpress-site.sh
