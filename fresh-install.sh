@@ -1,10 +1,6 @@
 #!/bin/bash
 echo "Welcome to the installation.."
 sudo apt-get update -y
-echo "deb http://packages.dotdeb.org jessie all" | sudo tee -a /etc/apt/sources.list.d/dotdeb.list
-echo "deb-src http://packages.dotdeb.org jessie all" | sudo tee -a /etc/apt/sources.list.d/dotdeb.list
-wget -qO - http://www.dotdeb.org/dotdeb.gpg | sudo apt-key add -
-sudo apt-get update
 sudo apt-get install nginx -y
 sudo apt-get install php7.0-cli php7.0-curl php7.0-dev php7.0-fpm php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-opcache -y
 sudo apt-get install mariadb-server mariadb-client -y
@@ -26,7 +22,7 @@ rm /etc/php/7.0/fpm/pool.d/www.conf
 cp www.conf /etc/php/7.0/fpm/pool.d/www.conf
 sudo service php7.0-fpm restart
 rm /etc/default/varnish
-cp varnish /etc/default/varnish 
+cp varnish /etc/default/varnish
 rm /etc/varnish/default.vcl
 cp default.vcl /etc/varnish/default.vcl
 cp /lib/systemd/system/varnish.service /etc/systemd/system/
