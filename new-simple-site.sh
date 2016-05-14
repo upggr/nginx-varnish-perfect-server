@@ -29,7 +29,6 @@ sudo cp $CURRENT_DIR/simple.template $CONFIG
 sudo $SED -i "s/DOMAIN/$DOMAIN/g" $CONFIG
 sudo $SED -i "s#ROOT#$WEB_DIR/$DOMAIN\/public_html#g" $CONFIG
 
-sudo usermod -aG $USERNAME www-data
 sudo chmod g+rxs $WEB_DIR/$DOMAIN
 sudo chmod 600 $CONFIG
 
@@ -46,7 +45,6 @@ sudo /etc/init.d/nginx reload
 sudo chown www-data:www-data $WEB_DIR/$DOMAINpublic_html -R
 sudo chmod 755 /var/www
 sudo chmod g+w /var/www -R
-sudo chown $USERNAME:www-data /var/www -R
 
 
 echo -e "\nSite Created for $DOMAIN"
