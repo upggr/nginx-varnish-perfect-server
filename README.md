@@ -1,5 +1,5 @@
 # nginx-varnish-perfect-server
-NOTICE : i AM ACTIVELY WORKING ON THIS NOW, THINGS MIGHT BE BROKEN
+UPDATE - Now with PHP7 and mysql for UBUNTU 16
 
 
 Usage :
