@@ -22,7 +22,7 @@ Script supports cloudflare, if you combine cloudflare dns and caching with varni
 
 <br>
 Configuring mysql : <br>
-All you have to do is run "sudo mysql_secure_installation" and answer the questions. You might want to allow root to login and remove it later, and you HAVE to set a password for mysql root.
+All you have to do is run `sudo mysql_secure_installation` and answer the questions. You might want to allow root to login and remove it later, and you HAVE to set a password for mysql root.
 <br>
 <br>
 Configuring phpmyadmin : <br>
