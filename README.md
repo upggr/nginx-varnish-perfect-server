@@ -23,15 +23,15 @@ Script supports cloudflare, if you combine cloudflare dns and caching with varni
 <br>
 <b>Extras:</b><br>
 <b>Configuring mysql</b>: <br>
-All you have to do is run `sudo mysql_secure_installation` and answer the questions. You might want to allow root to login and remove it later, and you HAVE to set a password for mysql root.
+All you have to do is run `sudo mysql_secure_installation` and answer the questions. You might want to allow root to login and remove it later, and you HAVE to set a password for mysql root.<br>
 <br>
 <b>Configuring phpmyadmin</b>: <br>
 Run `sudo apt-get install phpmyadmin -y` and follow the steps. Note that in the first step, you are presented with 2 options, apache and lighthttpd - do not select either.<br>
 <b>Configuring a database for your wordpress site</b> : <br>
-Just head to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.
+Just head to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.<br>
 <br>
 <b>FTP access</b>: <br>
-No need for FTP access! Just use SFTP on port 22.
+No need for FTP access! Just use SFTP on port 22.<br>
 <br>
 <b>Cloning a github repository and have it pull continuously in the newly created host</b>: <br>
 `sudo apt-get install git`<br>
