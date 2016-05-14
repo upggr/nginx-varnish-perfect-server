@@ -1,4 +1,4 @@
-# The perfect superfast webserver.
+# The perfect superfast webserver
 UPDATE - Now with PHP7 and mysql for UBUNTU 16
 
 
