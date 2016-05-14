@@ -26,8 +26,8 @@ Script supports cloudflare, if you combine cloudflare dns and caching with varni
 All you have to do is run `sudo mysql_secure_installation` and answer the questions. You might want to allow root to login and remove it later, and you HAVE to set a password for mysql root.
 <br>
 <b>Configuring phpmyadmin</b>: <br>
-Run `sudo apt-get install phpmyadmin -y` and follow the steps. Note that in the first step, you are presented with 2 options, apache and lighthttpd - do not select either.<br><br>
-Configuring a database for your wordpress site : <br>
+Run `sudo apt-get install phpmyadmin -y` and follow the steps. Note that in the first step, you are presented with 2 options, apache and lighthttpd - do not select either.<br>
+<b>Configuring a database for your wordpress site<b> : <br>
 Just had to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.
 <br>
 <b>FTP access</b>: <br>
