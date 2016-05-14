@@ -1,4 +1,4 @@
-# -*- mode: nginx; mode: flyspell-prog; mode: autopair; ispell-local-dictionary: "american" -*-
+
 server {
     listen 8080;
     server_name DOMAIN www.DOMAIN;
@@ -20,19 +20,19 @@ server {
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
     }
-<<<<<<< HEAD
+
 
     location ~* ^.*(\.(?:git|svn|htaccess|txt|pot?))$ {
         return 404;
     }
 
-=======
+
 
     location ~* ^.*(\.(?:git|svn|htaccess|txt|pot?))$ {
         return 404;
     }
 
->>>>>>> 183599cbe3d03576b3b6b8056088790f4734c257
+
     location ~* \.(?:css|gif|htc|ico|js|jpe?g|png|swf)$ {
         expires max;
         log_not_found off;
@@ -42,9 +42,5 @@ server {
         open_file_cache_min_uses 2;
         open_file_cache_errors off;
     }
-<<<<<<< HEAD
 
-=======
-
->>>>>>> 183599cbe3d03576b3b6b8056088790f4734c257
 }
