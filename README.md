@@ -1,5 +1,5 @@
 # The perfect superfast webserver
-UPDATE - Now with PHP7 and mysql for UBUNTU 16
+<b>UPDATE</b> - Now with PHP7 / mariadb /nginx / varnish for UBUNTU 16
 
 
 <b>Usage</b> :<br>
