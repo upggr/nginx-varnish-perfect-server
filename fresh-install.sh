@@ -30,10 +30,9 @@ sudo service varnish restart
 sudo rm /var/www/html/index.nginx-debian.html
 sudo cp index.php /var/www/html/index.php
 echo "nginx with php7 installed on port 8080.."
-echo "Changing ssh port to 9022 - NOTE THAT - NO MORE 22"
 sudo sudo ufw default deny incoming
 sudo ufw default allow outgoing
-sudo ufw allow 9022
+sudo ufw allow 22
 sudo ufw allow 80
 sudo ufw enable
 sudo rm cloudflare
