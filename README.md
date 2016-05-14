@@ -2,7 +2,7 @@
 UPDATE - Now with PHP7 and mysql for UBUNTU 16
 
 
-<b>Usage</b> :
+<b>Usage<br></b> :
 Head to [digital ocean](https://m.do.co/c/6e83df0e17c6) or wherever, create a 5-10$ server (UBUNTU 16+), login as root, and run the following :
 <br>
 `curl -sL https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/install.sh | sudo bash -`
@@ -21,6 +21,8 @@ Here you have it, 1.000.000 hits/per day capable wordpress instance for 10$
 Script supports cloudflare, if you combine cloudflare dns and caching with varnish and w3 total cache, you cant go faster :)
 
 <br>
+<br>
+<b>Extras:</b><br>
 <b>Configuring mysql</b>: <br>
 All you have to do is run `sudo mysql_secure_installation` and answer the questions. You might want to allow root to login and remove it later, and you HAVE to set a password for mysql root.
 <br>
