@@ -46,5 +46,7 @@ sudo rm php.ini
 sudo rm varnish
 sudo rm varnish.service
 sudo rm www.conf
+sudo mkdir /var/www/.ssh
+sudo chown www-data:www-data /var/www/.ssh -R
 sudo sudo apt-get update -y
 #sudo apt-get install phpmyadmin -y
