@@ -7,7 +7,6 @@ WEB_DIR='/var/www'
 SED=`which sed`
 NGINX=`sudo which nginx`
 CURRENT_DIR=`dirname $0`
-WWWUSER=`www-data`
 
 if [ -z $1 ]; then
 	echo "Usage new-simple-site.sh domain.com"
@@ -44,7 +43,7 @@ else
 fi
 
 sudo /etc/init.d/nginx reload
-sudo chown $USERNAME:$USERNAME $WEB_DIR/$DOMAINpublic_html -R
+sudo chown www-data:www-data $WEB_DIR/$DOMAINpublic_html -R
 sudo chmod 755 /var/www
 sudo chmod g+w /var/www -R
 sudo chown $USERNAME:www-data /var/www -R
