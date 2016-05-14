@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Welcome to the installation.."
 sudo apt-get update -y
-sudo apt-get install nginx php7.0-cli php7.0-curl php7.0-dev php7.0-fpm php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-opcache php-mbstring php7.0-mbstring php-gettext mariadb-server mariadb-client unzip varnish ufw -y
+sudo apt-get install nginx php7.0-cli php7.0-curl php7.0-dev php7.0-fpm php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-opcache php-mbstring php7.0-mbstring php7.0-sybase freetds-common libsybdb5 php-gettext mariadb-server mariadb-client unzip varnish ufw -y
 sudo service php7.0-fpm restart
 sudo service nginx restart
 sudo service varnish restart
