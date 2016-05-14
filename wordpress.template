@@ -15,7 +15,7 @@ server {
    location ~ \.php$ {
         try_files $uri =404;
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
@@ -27,11 +27,11 @@ server {
     }
 
 =======
-    
+
     location ~* ^.*(\.(?:git|svn|htaccess|txt|pot?))$ {
         return 404;
     }
-    
+
 >>>>>>> 183599cbe3d03576b3b6b8056088790f4734c257
     location ~* \.(?:css|gif|htc|ico|js|jpe?g|png|swf)$ {
         expires max;
@@ -45,6 +45,6 @@ server {
 <<<<<<< HEAD
 
 =======
-       
+
 >>>>>>> 183599cbe3d03576b3b6b8056088790f4734c257
 }
