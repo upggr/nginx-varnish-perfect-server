@@ -20,3 +20,15 @@ Here you have it, 1.000.000 hits/per day capable wordpress instance for 10$
 <br>
 -- Scripts are still under development --<br>
 Script supports cloudflare, if you combine cloudflare dns and caching with varnish and w3 total cache, you cant go faster :)
+
+<br>
+Configuring mysql : <br>
+All you have to do is run "sudo mysql_secure_installation" and answer the questions
+<br>
+<br>
+Configuring phpmyadmin : <br>
+Run "sudo apt-get install phpmyadmin -y" and follow the steps. Note that in the first step, you are presented with 2 optionsm, apache and lighthttpd - do not select either.
+Configuring a database for your wordpress site : <br>
+Just had to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.
+<br>
+<br>
