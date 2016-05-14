@@ -35,7 +35,7 @@ FTP access: <br>
 No need for FTP access! Just use SFTP on port 22.
 <br>
 <br>
-Cloning a github repository and have it pull continuously in the newly created host: <br>
+<b>Cloning a github repository and have it pull continuously in the newly created host:<b> <br>
 `sudo apt-get install git`<br>
 `sudo su - www-data -s /bin/bash`<br>
 `ssh-keygen -t rsa -b 4096 -C "your.github@email.com"`<br>
