@@ -55,7 +55,6 @@ cd ..
 echo "define('FS_METHOD', 'direct');" >> wp-config-sample.php
 sudo chown www-data:www-data $WEB_DIR/$DOMAIN/public_html -R
 sudo chmod 0755 $WEB_DIR/$DOMAIN/public_html
-sudo chmod 0644 $WEB_DIR/$DOMAIN/public_html/wp-config.php
 sudo chmod g+w $WEB_DIR -R
 
 
