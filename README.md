@@ -51,7 +51,7 @@ Back in your github, under webhooks in your project settings, add the url : `htt
 <br>
 Easily copy other files from other webservers using ftp: <br>
 go to your public_html (`cd /var/www/yourdomain.com/public_html`)<br>
-`sudo wget --ftp-user='username' --ftp-password='password' -nH --cut-dirs=2 -m ftp://your.other.old.host/site/wwwroot/*`<br>
+`sudo wget --ftp-user='username' --ftp-password='password' -nH --cut-dirs=2 -m ftp://your.other.old.host/site/wwwroot/*` (note the --cut-dirs=2 because the files are 2 subfolders deep in this example (/site/wwwroot/)<br>
 <br>
 <br>
 
