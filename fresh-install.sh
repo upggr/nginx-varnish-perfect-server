@@ -2,9 +2,9 @@
 echo "Welcome to the installation.."
 sudo apt-get update -y
 sudo apt-get install nginx php7.0-cli php7.0-curl php7.0-dev php7.0-fpm php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-opcache mariadb-server mariadb-client unzip varnish ufw -y
-sudo service php7.0-fpm start
-sudo service nginx start
-sudo service varnish start
+sudo service php7.0-fpm restart
+sudo service nginx restart
+sudo service varnish restart
 sudo rm /etc/nginx/sites-available/default
 sudo cp default /etc/nginx/sites-available/default
 sudo rm /etc/nginx/nginx.conf
@@ -21,8 +21,10 @@ sudo rm /etc/default/varnish
 sudo cp varnish /etc/default/varnish
 sudo rm /etc/varnish/default.vcl
 sudo cp default.vcl /etc/varnish/default.vcl
-sudo cp varnish.service /etc/systemd/system/
-#sudo cp /lib/systemd/system/varnish.service /etc/systemd/system/
+sudo rm /lib/systemd/system/varnish.service
+sudo cp varnish.service /lib/systemd/system/varnish.service
+sudo cp /lib/systemd/system/varnish.service /etc/systemd/system/
+sudo systemctl daemon-reload
 #sudo sed -i 's/6081/80/g' /etc/systemd/system/varnish.service
 sudo service varnish restart
 sudo rm /var/www/html/index.nginx-debian.html
