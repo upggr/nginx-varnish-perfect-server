@@ -8,6 +8,7 @@ sudo service varnish start
 sudo rm /etc/nginx/sites-available/default
 sudo cp default /etc/nginx/sites-available/default
 sudo rm /etc/nginx/nginx.conf
+sudo cp nginx.conf /etc/nginx/nginx.conf
 sudo cp cloudflare /etc/nginx/conf.d/cloudflare
 sudo service nginx restart
 sudo rm /etc/php/7.0/fpm/php.ini
