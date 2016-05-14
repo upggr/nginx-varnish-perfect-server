@@ -1,4 +1,4 @@
-# The perfect superfast webserver with nginx, php 7, mysql, phpmyadmin.
+# The perfect superfast webserver.
 UPDATE - Now with PHP7 and mysql for UBUNTU 16
 
 
