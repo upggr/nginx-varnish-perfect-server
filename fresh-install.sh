@@ -21,12 +21,12 @@ sudo rm /etc/default/varnish
 sudo cp varnish /etc/default/varnish
 sudo rm /etc/varnish/default.vcl
 sudo cp default.vcl /etc/varnish/default.vcl
-sudo cp /lib/systemd/system/varnish.service /etc/systemd/system/
-sudo sed -i 's/6081/80/g' /etc/systemd/system/varnish.service
+sudo cp varnish.service /etc/systemd/system/
+#sudo cp /lib/systemd/system/varnish.service /etc/systemd/system/
+#sudo sed -i 's/6081/80/g' /etc/systemd/system/varnish.service
 sudo service varnish restart
 sudo rm /var/www/html/index.nginx-debian.html
 sudo cp index.php /var/www/html/index.php
-sudo cp default.vcl /etc/varnish/default.vcl
 echo "nginx with php7 installed on port 8080.."
 echo "Changing ssh port to 9022 - NOTE THAT - NO MORE 22"
 sudo sudo ufw default deny incoming
