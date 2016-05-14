@@ -54,3 +54,9 @@ go to your public_html (`cd /var/www/yourdomain.com/public_html`)<br>
 `sudo wget --ftp-user='username' --ftp-password='password' -nH --cut-dirs=2 -m ftp://your.other.old.host/site/wwwroot/*`<br>
 <br>
 <br>
+
+Exclude one of your websites from varnish <br>
+`sudo nano /etc/varnish/default.vcl`<br>
+`if (req.http.host == "www.yourdomain.com" && req.url == "/") {return (pass);}`<br>
+<br>
+<br>
