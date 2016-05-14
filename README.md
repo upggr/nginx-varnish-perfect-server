@@ -28,7 +28,7 @@ All you have to do is run `sudo mysql_secure_installation` and answer the questi
 <b>Configuring phpmyadmin</b>: <br>
 Run `sudo apt-get install phpmyadmin -y` and follow the steps. Note that in the first step, you are presented with 2 options, apache and lighthttpd - do not select either.<br>
 <b>Configuring a database for your wordpress site</b> : <br>
-Just had to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.
+Just head to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.
 <br>
 <b>FTP access</b>: <br>
 No need for FTP access! Just use SFTP on port 22.
