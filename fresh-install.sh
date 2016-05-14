@@ -8,29 +8,29 @@ sudo apt-get install unzip varnish   ufw  -y
 sudo service php7.0-fpm restart
 sudo service nginx restart
 sudo service varnish restart
-rm /etc/nginx/sites-available/default
-cp default /etc/nginx/sites-available/default
-rm /etc/nginx/nginx.conf
-cp nginx.conf /etc/nginx/nginx.conf
-rm cloudflare /etc/nginx/conf.d/cloudflare
-cp cloudflare /etc/nginx/conf.d/cloudflare
+sudo rm /etc/nginx/sites-available/default
+sudo cp default /etc/nginx/sites-available/default
+sudo rm /etc/nginx/nginx.conf
+sudo cp nginx.conf /etc/nginx/nginx.conf
+sudo rm cloudflare /etc/nginx/conf.d/cloudflare
+sudo cp cloudflare /etc/nginx/conf.d/cloudflare
 sudo service nginx restart
-rm /etc/php/7.0/fpm/php.ini
-cp php.ini /etc/php/7.0/fpm/php.ini
+sudo rm /etc/php/7.0/fpm/php.ini
+sudo cp php.ini /etc/php/7.0/fpm/php.ini
 sudo service php7.0-fpm restart
-rm /etc/php/7.0/fpm/pool.d/www.conf
-cp www.conf /etc/php/7.0/fpm/pool.d/www.conf
+sudo rm /etc/php/7.0/fpm/pool.d/www.conf
+sudo cp www.conf /etc/php/7.0/fpm/pool.d/www.conf
 sudo service php7.0-fpm restart
-rm /etc/default/varnish
-cp varnish /etc/default/varnish
-rm /etc/varnish/default.vcl
-cp default.vcl /etc/varnish/default.vcl
-cp /lib/systemd/system/varnish.service /etc/systemd/system/
+sudo rm /etc/default/varnish
+sudo cp varnish /etc/default/varnish
+sudo rm /etc/varnish/default.vcl
+sudo cp default.vcl /etc/varnish/default.vcl
+sudo cp /lib/systemd/system/varnish.service /etc/systemd/system/
 sed -i 's/6081/80/g' /etc/systemd/system/varnish.service
 sudo varnish restart
-rm /var/www/html/index.nginx-debian.html
-cp index.php /var/www/index.php
-cp default.vcl /etc/varnish/default.vcl
+sudo rm /var/www/html/index.nginx-debian.html
+sudo cp index.php /var/www/html/index.php
+sudo cp default.vcl /etc/varnish/default.vcl
 echo "nginx with php7 installed on port 8080.."
 echo "Changing ssh port to 9022 - NOTE THAT - NO MORE 22"
 sed -i 's/22/9022/g' /etc/ssh/sshd_config
@@ -39,16 +39,16 @@ sudo ufw default allow outgoing
 sudo ufw allow 9022
 sudo ufw allow 80
 sudo ufw enable
-rm cloudflare
-rm default
-rm default.vcl
-rm fresh-install.sh
-rm install.sh
-rm my.cnf
-rm nginx.conf
-rm php.ini
-rm README.md
-rm varnish
-rm www.conf
-sudo apt-get update -y
-sudo apt-get install phpmyadmin -y
+sudo rm cloudflare
+sudo rm default
+sudo rm default.vcl
+sudo rm fresh-install.sh
+sudo rm install.sh
+sudo rm my.cnf
+sudo rm nginx.conf
+sudo rm php.ini
+sudo rm README.md
+sudo rm varnish
+sudo rm www.conf
+sudo sudo apt-get update -y
+#sudo apt-get install phpmyadmin -y
