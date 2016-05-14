@@ -44,7 +44,7 @@ Cloning a github repository and have it pull continuously in the newly created h
 `cat /var/www/.ssh/id_rsa.pub` <===  Copy the output of this. Then head to your github repo or account and add this as a deploy key.<br>
 Go to your web directory (`cd /var/www/yourdomain.com/public_html`)<br>
 Run `git clone git@github.com:upggr/nginx-varnish-perfect-server.git .` <=== Just replace this address with the repository you are cloning<br>
-create a new file : `gitpull.php` in your root<br>
+create a new file : `gitpull.php` in your root (obviously, add it to your repo too so it is not removed with each pull)<br>
 Add the following in the file : `<?php exec(git pull) ?>`<br>
 Back in your github, under webhooks in your project settings, add the url : `http://yourwebsite.com/gitpull.php`<br>
 <br>
