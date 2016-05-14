@@ -7,10 +7,9 @@ WEB_DIR='/var/www'
 SED=`which sed`
 NGINX=`sudo which nginx`
 CURRENT_DIR=`dirname $0`
-WWWUSER=`www-data`
 
 if [ -z $1 ]; then
-	echo "Usage new-wordpress-site.sh domain.com" 
+	echo "Usage new-wordpress-site.sh domain.com"
 	exit 1
 fi
 DOMAIN=$1
@@ -30,7 +29,6 @@ sudo cp $CURRENT_DIR/wordpress.template $CONFIG
 sudo $SED -i "s/DOMAIN/$DOMAIN/g" $CONFIG
 sudo $SED -i "s#ROOT#$WEB_DIR/$DOMAIN\/public_html#g" $CONFIG
 
-sudo usermod -aG $USERNAME www-data
 sudo chmod g+rxs $WEB_DIR/$DOMAIN
 sudo chmod 600 $CONFIG
 
@@ -55,7 +53,7 @@ rm hello.php
 cd ..
 cd ..
 echo "define('FS_METHOD', 'direct');" >> wp-config-sample.php
-sudo chown $WWWUSER:$WWWUSER $WEB_DIR/$DOMAIN/public_html -R
+sudo chown www-data:www-data $WEB_DIR/$DOMAIN/public_html -R
 sudo chmod 0755 $WEB_DIR/$DOMAIN/public_html
 sudo chmod 0644 $WEB_DIR/$DOMAIN/public_html/wp-config.php
 sudo chmod g+w $WEB_DIR -R
