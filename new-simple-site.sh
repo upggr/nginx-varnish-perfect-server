@@ -40,9 +40,9 @@ else
 	echo "errors: $CONFIG";
 	exit 1;
 fi
-
+sudo cp index.php $WEB_DIR/$DOMAIN/public_html/index.php
 sudo /etc/init.d/nginx reload
-sudo chown www-data:www-data $WEB_DIR/$DOMAINpublic_html -R
+sudo chown www-data:www-data $WEB_DIR/$DOMAIN/public_html -R
 sudo chmod 755 /var/www
 sudo chmod g+w /var/www -R
 
