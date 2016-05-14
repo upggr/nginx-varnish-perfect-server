@@ -11,8 +11,6 @@ sudo service varnish restart
 sudo rm /etc/nginx/sites-available/default
 sudo cp default /etc/nginx/sites-available/default
 sudo rm /etc/nginx/nginx.conf
-sudo cp nginx.conf /etc/nginx/nginx.conf
-sudo rm cloudflare /etc/nginx/conf.d/cloudflare
 sudo cp cloudflare /etc/nginx/conf.d/cloudflare
 sudo service nginx restart
 sudo rm /etc/php/7.0/fpm/php.ini
@@ -26,15 +24,14 @@ sudo cp varnish /etc/default/varnish
 sudo rm /etc/varnish/default.vcl
 sudo cp default.vcl /etc/varnish/default.vcl
 sudo cp /lib/systemd/system/varnish.service /etc/systemd/system/
-sed -i 's/6081/80/g' /etc/systemd/system/varnish.service
+sudo sed -i 's/6081/80/g' /etc/systemd/system/varnish.service
 sudo varnish restart
 sudo rm /var/www/html/index.nginx-debian.html
 sudo cp index.php /var/www/html/index.php
 sudo cp default.vcl /etc/varnish/default.vcl
 echo "nginx with php7 installed on port 8080.."
 echo "Changing ssh port to 9022 - NOTE THAT - NO MORE 22"
-sed -i 's/22/9022/g' /etc/ssh/sshd_config
-sudo ufw default deny incoming
+sudo sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow 9022
 sudo ufw allow 80
@@ -47,7 +44,6 @@ sudo rm install.sh
 sudo rm my.cnf
 sudo rm nginx.conf
 sudo rm php.ini
-sudo rm README.md
 sudo rm varnish
 sudo rm www.conf
 sudo sudo apt-get update -y
