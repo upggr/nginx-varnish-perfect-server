@@ -43,6 +43,7 @@ sudo rm my.cnf
 sudo rm nginx.conf
 sudo rm php.ini
 sudo rm varnish
+sudo rm varnish.service
 sudo rm www.conf
 sudo sudo apt-get update -y
 #sudo apt-get install phpmyadmin -y

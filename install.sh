@@ -11,6 +11,7 @@ wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/php.ini
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/simple.template
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/varnish
+wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/varnish.service
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/wordpress.template
 wget https://raw.githubusercontent.com/upggr/nginx-varnish-perfect-server/master/www.conf
 
