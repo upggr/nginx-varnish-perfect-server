@@ -22,7 +22,7 @@ sudo rm /etc/varnish/default.vcl
 sudo cp default.vcl /etc/varnish/default.vcl
 sudo cp /lib/systemd/system/varnish.service /etc/systemd/system/
 sudo sed -i 's/6081/80/g' /etc/systemd/system/varnish.service
-sudo varnish restart
+sudo service varnish restart
 sudo rm /var/www/html/index.nginx-debian.html
 sudo cp index.php /var/www/html/index.php
 sudo cp default.vcl /etc/varnish/default.vcl
