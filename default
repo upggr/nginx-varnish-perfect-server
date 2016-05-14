@@ -1,6 +1,6 @@
 server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
+        listen 8080 default_server;
+        listen [::]:8080 default_server;
 
 
  root /var/www/html;
@@ -23,7 +23,7 @@ fastcgi_split_path_info ^(.+\.php)(/.+)$;
         include fastcgi_params;
 
                }
-               location ~* ^/phpmyadmin/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|$
+               location ~* ^/phpmyadmin/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$ {
                        root /usr/share/;
                }
         }
