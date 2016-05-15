@@ -34,7 +34,7 @@ You will also need a new mysql user other than root to login remotely to this ph
 <br>
 <b>Copy all databases from a remote phpmyadmin enabled mysql/mariadb server</b> : <br>
 Use replication tab in phpmyadmin! make the new a slave, the old the master, then make the slave the new master.<br>
-Go into your phpmyadmin and see the servers tab :) Remember that you first need to export all the structure from the master and import it to the slave. then start replication.<br>
+Remember that you first need to export all the structure from the master and import it to the slave. then start replication.<br>
 <br>
 <b>Create a db for your wordpress site</b> : <br>
 Just head to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.<br>
