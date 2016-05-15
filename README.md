@@ -33,17 +33,7 @@ You will also need a new mysql user other than root to login remotely to this ph
 `GRANT ALL PRIVILEGES ON *.* TO 'mysqluser'@'localhost' WITH GRANT OPTION;`<br>
 <br>
 <b>Copy all databases from a remote phpmyadmin enabled mysql/mariadb server</b> : <br>
-`sudo nano /etc/phpmyadmin/config.inc.php `
-Add the following lines under i++ :
-`$cfg['Servers'][$i]['host']          = '<remote-server-address>'; // Remote MySQL hostname or IP address`<br>
-`$cfg['Servers'][$i]['port']          = '';          // MySQL port - leave blank for default port`<br>
-`$cfg['Servers'][$i]['socket']        = '';          // Path to the socket - leave blank for default socket`<br>
-`$cfg['Servers'][$i]['connect_type']  = 'tcp';       // How to connect to MySQL server ('tcp' or 'socket')`<br>
-`$cfg['Servers'][$i]['extension']     = 'mysql';     // The php MySQL extension to use ('mysql' or 'mysqli')`<br>
-`$cfg['Servers'][$i]['compress']      = FALSE;       // Use compressed protocol for the MySQL connection`<br>
-`$cfg['Servers'][$i]['auth_type']     = 'config';    // Authentication method (config, http or cookie based)?`<br>
-`$cfg['Servers'][$i]['user']          = '<db-username>';     // Remote MySQL user`<br>
-`$cfg['Servers'][$i]['password']      = '<db-password>';     // Remote MySQL password`<br>
+Use replication tab in phpmyadmin! make the new a slave, the old the master, then make the slave the new master.<br>
 Go into your phpmyadmin and see the servers tab :) <br>
 <br>
 <b>Create a db for your wordpress site</b> : <br>
