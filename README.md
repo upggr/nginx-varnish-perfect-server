@@ -31,9 +31,22 @@ You will also need a new mysql user other than root to login remotely to this ph
 `sudo mysql -uroot -p`<br>
 `CREATE USER 'mysqluser'@'localhost' IDENTIFIED BY 'mypassword';`<br>
 `GRANT ALL PRIVILEGES ON *.* TO 'mysqluser'@'localhost' WITH GRANT OPTION;`<br>
-
 <br>
 <b>Configuring a database for your wordpress site</b> : <br>
+`sudo nano /etc/phpmyadmin/config.inc.php `
+Add the following lines under i++ :
+`$cfg['Servers'][$i]['host']          = '<remote-server-address>'; // Remote MySQL hostname or IP address`<br>
+`$cfg['Servers'][$i]['port']          = '';          // MySQL port - leave blank for default port`<br>
+`$cfg['Servers'][$i]['socket']        = '';          // Path to the socket - leave blank for default socket`<br>
+`$cfg['Servers'][$i]['connect_type']  = 'tcp';       // How to connect to MySQL server ('tcp' or 'socket')`<br>
+`$cfg['Servers'][$i]['extension']     = 'mysql';     // The php MySQL extension to use ('mysql' or 'mysqli')`<br>
+`$cfg['Servers'][$i]['compress']      = FALSE;       // Use compressed protocol for the MySQL connection`<br>
+`$cfg['Servers'][$i]['auth_type']     = 'config';    // Authentication method (config, http or cookie based)?`<br>
+`$cfg['Servers'][$i]['user']          = '<db-username>';     // Remote MySQL user`<br>
+`$cfg['Servers'][$i]['password']      = '<db-password>';     // Remote MySQL password`<br>
+Go into your phpmyadmin and see the servers tab :) <br>
+<br>
+<b>Copy all data from a remote phpmyadmin mysql or mariadb database</b> : <br>
 Just head to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.<br>
 <br>
 <b>FTP access</b>: <br>
