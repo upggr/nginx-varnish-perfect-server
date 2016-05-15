@@ -32,7 +32,7 @@ You will also need a new mysql user other than root to login remotely to this ph
 `CREATE USER 'mysqluser'@'localhost' IDENTIFIED BY 'mypassword';`<br>
 `GRANT ALL PRIVILEGES ON *.* TO 'mysqluser'@'localhost' WITH GRANT OPTION;`<br>
 <br>
-<b>Configuring a database for your wordpress site</b> : <br>
+<b>Copy all databases from a remote phpmyadmin enabled mysql/mariadb server</b> : <br>
 `sudo nano /etc/phpmyadmin/config.inc.php `
 Add the following lines under i++ :
 `$cfg['Servers'][$i]['host']          = '<remote-server-address>'; // Remote MySQL hostname or IP address`<br>
@@ -46,7 +46,7 @@ Add the following lines under i++ :
 `$cfg['Servers'][$i]['password']      = '<db-password>';     // Remote MySQL password`<br>
 Go into your phpmyadmin and see the servers tab :) <br>
 <br>
-<b>Copy all data from a remote phpmyadmin mysql or mariadb database</b> : <br>
+<b>Create a db for your wordpress site</b> : <br>
 Just head to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.<br>
 <br>
 <b>FTP access</b>: <br>
