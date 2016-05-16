@@ -58,13 +58,14 @@ No need for FTP access! Just use SFTP on port 22.<br>
 `sudo passwd sftpuser1`<br>
 `sudo groupadd sftp`<br>
 `usermod -G sftp sftpuser1`<br>
-`usermod -d /var/www/public_html/sftpuserwebsite.com sftpuser1` <br>
+`usermod -d /var/www/sftpuserwebsite.com/public_html sftpuser1` <br>
 `sudo nano  /etc/ssh/sshd_config`<br>
+Comment `#Subsystem sftp /usr/lib/openssh/sftp-server`<br>
 Add lines in the end :<br>
 `Subsystem sftp internal-sftp` <br>
 `  X11Forwarding no`<br>
 `  AllowTcpForwarding no`<br>
-`  ChrootDirectory /ubuntu` <br>
+`  ChrootDirectory /var/www/sftpuserwebsite.com/public_html` <br>
 `  ForceCommand internal-sftp `
 <br>
 <b>Cloning a github repository and have it pull continuously in the newly created host</b>: <br>
