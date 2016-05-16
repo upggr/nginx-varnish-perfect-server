@@ -56,8 +56,8 @@ No need for FTP access! Just use SFTP on port 22.<br>
 <b>Create an SFTP user</b>: <br>
 `sudo useradd sftpuser1`<br>
 `sudo passwd sftpuser1`<br>
-`sudo groupadd sftp`<br>
-`usermod -G sftp sftpuser1`<br>
+`sudo groupadd sftponly`<br>
+`usermod -G sftponly sftpuser1`<br>
 `usermod -d /var/www/sftpuserwebsite.com/public_html sftpuser1` <br>
 `sudo nano  /etc/ssh/sshd_config`<br>
 Comment `#Subsystem sftp /usr/lib/openssh/sftp-server`<br>
