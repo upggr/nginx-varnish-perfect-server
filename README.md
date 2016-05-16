@@ -53,6 +53,8 @@ Just head to http://your.ip/phpmyadmin and create a new database. Then while in 
 <b>FTP access</b>: <br>
 No need for FTP access! Just use SFTP on port 22...But if you really want it:<br>
 `sudo nano /etc/vsftpd.allowed_users` <- add user here. Default port for ftp is 9921<br>
+Also `sudo nano /etc/ssh/sshd_config` <- Add to the end : `DenyUsers username`<br>
+FTP server will run on port 9922<br>
 <br>
 
 <b>Cloning a github repository and have it pull continuously in the newly created host</b>: <br>
