@@ -76,7 +76,7 @@ On the old server :<br>
 `sudo scp  -P 9022 -c blowfish -C /tmp/www.tar.gz linuxuser@newserver.ip:/tmp/www.tar.gz`<br>
 On the new server run : <br>
 `sudo su - www-data -s /bin/bash`<br>
-`tar -xf /tmp/www.tar.gz /var/www
+`tar -xf /tmp/www.tar.gz /var/www`<br>
 `sudo scp -r -P 9022 -c blowfish -C /var/www linuxuser@newserver.ip:/var`<br>
 <br>
 <b>Exclude one of your websites from varnish</b>: <br>
