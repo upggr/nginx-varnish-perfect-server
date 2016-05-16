@@ -71,7 +71,13 @@ go to your public_html (`cd /var/www/yourdomain.com/public_html`)<br>
 `sudo wget --ftp-user='username' --ftp-password='password' -nH --cut-dirs=2 -m ftp://your.other.old.host/site/wwwroot/*` (note the --cut-dirs=2 because the files are 2 subfolders deep in this example (/site/wwwroot/)<br>
 <br>
 <b>Copy all www using scp! Run this on the old server. Make sure you have added the user you are using to connect to the www-data group.</b>: <br>
-`sudo scp -r -P 9022 /var/www linuxuser@newserver.ip:/var`<br>
+On the new server :<br>
+`sudo nano /etc/ssh/sshd_config`<br>
+Add the following to the end of the file :<br>
+`Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,blowfish-cbc,aes128-cbc,3des-cbc,cast128-cbc,arcfour,aes192-cbc,aes256-cbc`<br>
+`sudo service sshd restart ; sudo service sshd status`<br>
+On the old server run : <br>
+`sudo scp -r -P 9022 -c blowfish -C /var/www linuxuser@newserver.ip:/var`<br>
 <br>
 <b>Exclude one of your websites from varnish</b>: <br>
 `sudo nano /etc/varnish/default.vcl`<br>
