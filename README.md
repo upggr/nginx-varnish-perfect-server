@@ -33,8 +33,19 @@ You will also need a new mysql user other than root to login remotely to this ph
 `GRANT ALL PRIVILEGES ON *.* TO 'mysqluser'@'localhost' WITH GRANT OPTION;`<br>
 <br>
 <b>Copy all databases from a remote phpmyadmin enabled mysql/mariadb server</b> : <br>
+On old server :<br>
+`mysql -u root -p`<br>
+`FLUSH TABLES WITH READ LOCK;`<br>
+`SET GLOBAL read_only = ON;`<br>
+`EXIT`<br>
+`mysqldump --lock-all-tables -u root -p --all-databases > dump.sql`<br>
+`scp dump.sql root@newserver_IP:/tmp`<br>
+You are done.<br>
+Do you want to migrate slowly? Just unlock the tables and start a replicatiln using phpmyadmin:<br>
+`mysql -u root -p`
+`SET GLOBAL read_only = OFF;`
+`UNLOCK TABLES;`
 Use replication tab in phpmyadmin! make the new a slave, the old the master, then make the slave the new master.<br>
-Remember that you first need to export all the structure from the master and import it to the slave. then start replication. Also do not forget to exclude mysql and phpmyadmin tables!<br>
 <br>
 <b>Create a db for your wordpress site</b> : <br>
 Just head to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.<br>
