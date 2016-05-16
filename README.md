@@ -77,7 +77,7 @@ go to your public_html (`cd /var/www/yourdomain.com/public_html`)<br>
 <b>Copy all www using scp! Run this on the old server. Make sure you have added the user you are using to connect to the www-data group.</b>: <br>
 On the old server :<br>
 `tar -zcf /tmp/www.tar.gz /var/www`<br>
-`sudo scp  -P 9022 -c blowfish -C /tmp/www.tar.gz linuxuser@newserver.ip:/tmp/www.tar.gz`<br>
+`sudo scp  -P 9022 -C /tmp/www.tar.gz linuxuser@newserver.ip:/tmp/www.tar.gz`<br>
 `rm -rf /tmp/www.tar.gz`<br>
 On the new server run : <br>
 `sudo su - www-data -s /bin/bash`<br>
