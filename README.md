@@ -51,24 +51,10 @@ Use replication tab in phpmyadmin! make the new a slave, the old the master, the
 Just head to http://your.ip/phpmyadmin and create a new database. Then while in this database , go under privileges and add a new user / password. Do not touch any of the options, just create.<br>
 <br>
 <b>FTP access</b>: <br>
-No need for FTP access! Just use SFTP on port 22.<br>
+No need for FTP access! Just use SFTP on port 22...But if you really want it:<br>
+`sudo nano /etc/vsftpd.allowed_users` <- add user here<br>
 <br>
-<b>Create an SFTP user</b>: <br>
-`sudo useradd sftpuser1`<br>
-`sudo passwd sftpuser1`<br>
-`sudo groupadd sftponly`<br>
-`usermod -G sftponly sftpuser1`<br>
-`usermod -d /var/www/sftpuserwebsite.com/public_html sftpuser1` <br>
-`sudo nano  /etc/ssh/sshd_config`<br>
-Comment `#Subsystem sftp /usr/lib/openssh/sftp-server`<br>
-Add lines in the end :<br>
-`Subsystem sftp internal-sftp` <br>
-`Match Group sftponly`<br>
-`  X11Forwarding no`<br>
-`  AllowTcpForwarding no`<br>
-`  ChrootDirectory /var/www/sftpuserwebsite.com/public_html` <br>
-`  ForceCommand internal-sftp `
-<br>
+
 <b>Cloning a github repository and have it pull continuously in the newly created host</b>: <br>
 `sudo apt-get install git`<br>
 `sudo su - www-data -s /bin/bash`<br>
