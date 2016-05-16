@@ -39,7 +39,7 @@ sudo ufw default allow outgoing
 sudo ufw allow 22
 sudo ufw allow 80
 sudo ufw allow 8080
-sudo ufw allow 9922
+sudo ufw allow 9921
 sudo ufw enable
 sudo rm cloudflare
 sudo rm default
