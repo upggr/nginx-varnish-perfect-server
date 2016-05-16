@@ -74,7 +74,8 @@ Back in your github, under webhooks in your project settings, add the url : `htt
 go to your public_html (`cd /var/www/yourdomain.com/public_html`)<br>
 `sudo wget --ftp-user='username' --ftp-password='password' -nH --cut-dirs=2 -m ftp://your.other.old.host/site/wwwroot/*` (note the --cut-dirs=2 because the files are 2 subfolders deep in this example (/site/wwwroot/)<br>
 <br>
-<b>Copy all www using scp! Run this on the old server. Make sure you have added the user you are using to connect to the www-data group.</b>: <br>
+<b>Copy all www using scp!</b><br>
+Make sure you have added the user you are using to connect to the www-data group.: <br>
 On the old server :<br>
 `tar -zcf /tmp/www.tar.gz /var/www`<br>
 `sudo scp  -P 22 -C /tmp/www.tar.gz linuxuser@newserver.ip:/tmp/www.tar.gz`<br>
