@@ -41,7 +41,7 @@ On old server :<br>
 `mysqldump --lock-all-tables -u root -p --all-databases > dump.sql`<br>
 `scp dump.sql root@newserver_IP:/tmp`<br>
 You are done.<br>
-Do you want to migrate slowly? Just unlock the tables and start a replicatiln using phpmyadmin:<br>
+Do you want to migrate in stages? Just unlock the tables and start a replication using phpmyadmin:<br>
 `mysql -u root -p`
 `SET GLOBAL read_only = OFF;`
 `UNLOCK TABLES;`
@@ -69,6 +69,9 @@ Back in your github, under webhooks in your project settings, add the url : `htt
 <b>Easily copy other files from other webservers using ftp</b>: <br>
 go to your public_html (`cd /var/www/yourdomain.com/public_html`)<br>
 `sudo wget --ftp-user='username' --ftp-password='password' -nH --cut-dirs=2 -m ftp://your.other.old.host/site/wwwroot/*` (note the --cut-dirs=2 because the files are 2 subfolders deep in this example (/site/wwwroot/)<br>
+<br>
+<b>Copy all www using scp! Run this on the old server. Make sure you have added the user you are using to connect to the www-data group.</b>: <br>
+`sudo scp -r -P 9022 /var/www linuxuser@newserver.ip:/var`<br>
 <br>
 <b>Exclude one of your websites from varnish</b>: <br>
 `sudo nano /etc/varnish/default.vcl`<br>
