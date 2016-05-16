@@ -14,7 +14,7 @@ If you just want to install a simple site other than wordpress just run :<br> `.
 
 Then, just visit domain.com (provided you have pointed dns to your ip) and point to your mysql server.
 
-Run the above commands for as many domains as you need. Ports used : 21,80,22,12000-12010<br>
+Run the above commands for as many domains as you need. Ports used : 9921,80,22,12000-12010<br>
 
 Here you have it, 1.000.000 hits/per day capable wordpress instance for 10$
 <br>
