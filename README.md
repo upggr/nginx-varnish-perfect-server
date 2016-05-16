@@ -77,7 +77,7 @@ On the old server :<br>
 On the new server run : <br>
 `sudo su - www-data -s /bin/bash`<br>
 `tar -xf /tmp/www.tar.gz /var/www`<br>
-`sudo scp -r -P 9022 -c blowfish -C /var/www linuxuser@newserver.ip:/var`<br>
+`sudo scp -r -P 9022 -C /var/www linuxuser@newserver.ip:/var`<br>
 <br>
 <b>Exclude one of your websites from varnish</b>: <br>
 `sudo nano /etc/varnish/default.vcl`<br>
