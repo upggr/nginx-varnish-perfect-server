@@ -63,6 +63,7 @@ No need for FTP access! Just use SFTP on port 22.<br>
 Comment `#Subsystem sftp /usr/lib/openssh/sftp-server`<br>
 Add lines in the end :<br>
 `Subsystem sftp internal-sftp` <br>
+`Match Group sftponly`<br>
 `  X11Forwarding no`<br>
 `  AllowTcpForwarding no`<br>
 `  ChrootDirectory /var/www/sftpuserwebsite.com/public_html` <br>
