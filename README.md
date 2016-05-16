@@ -53,6 +53,20 @@ Just head to http://your.ip/phpmyadmin and create a new database. Then while in 
 <b>FTP access</b>: <br>
 No need for FTP access! Just use SFTP on port 22.<br>
 <br>
+<b>Create an SFTP user</b>: <br>
+`sudo useradd sftpuser1`<br>
+`sudo passwd sftpuser1`<br>
+`sudo groupadd sftp`<br>
+`usermod -G sftp sftpuser1`<br>
+`usermod -d /var/www/public_html/sftpuserwebsite.com sftpuser1` <br>
+`sudo nano  /etc/ssh/sshd_config`<br>
+Add lines in the end :<br>
+`Subsystem sftp internal-sftp` <br>
+`  X11Forwarding no`<br>
+`  AllowTcpForwarding no`<br>
+`  ChrootDirectory /ubuntu` <br>
+`  ForceCommand internal-sftp `
+<br>
 <b>Cloning a github repository and have it pull continuously in the newly created host</b>: <br>
 `sudo apt-get install git`<br>
 `sudo su - www-data -s /bin/bash`<br>
