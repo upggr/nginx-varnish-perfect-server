@@ -21,7 +21,6 @@ sudo rm /etc/default/varnish
 sudo cp varnish /etc/default/varnish
 sudo rm /etc/varnish/default.vcl
 sudo cp default.vcl /etc/varnish/default.vcl
-/etc/vsftpd.conf
 sudo rm /etc/vsftpd.conf
 sudo cp vsftpd.conf /etc/vsftpd.conf
 sudo rm /lib/systemd/system/varnish.service
