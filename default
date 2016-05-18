@@ -1,44 +1,21 @@
 server {
         listen 8080 default_server;
         listen [::]:8080 default_server;
-        root /var/www/html;
-        index index.php;
+         root /var/www/html;
+        index index.php index.html index.htm index.nginx-debian.html;
         server_name _;
-        location ~ \.php$
-        {
-            try_files $uri =404;
-            fastcgi_split_path_info ^(.+\.php)(/.+)$;
-            fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
-            fastcgi_index index.php;
-            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-            include fastcgi_params;
-        }
-        location ~* ^.*(\.(?:git|svn|htaccess|txt|pot?))$
-        {
-            return 404;
+
+location /sqladmin {
+                alias   /usr/share/phpmyadmin/;
+                try_files $uri $uri/ /index.php;
         }
 
-        location /phpmyadmin
-        {
-             root /usr/share/;
-             index index.php index.html index.htm;
-                location ~ ^/phpmyadmin/(.+\.php)$
-                {
-                       try_files $uri =404;
-                       root /usr/share/;
-                       fastcgi_split_path_info ^(.+\.php)(/.+)$;
-                      fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
-                      fastcgi_index index.php;
-                      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-                      include fastcgi_params;
-
-               }
-               location ~* ^/phpmyadmin/(.+\.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt))$
-               {
-                       root /usr/share/;
-               }
-        }
-        location /phpMyAdmin {
-               rewrite ^/* /phpmyadmin last;
-        }
+location ~ ^/sqladmin(.+\.php)$  {
+        alias /usr/share/phpmyadmin$1;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+}
 }
