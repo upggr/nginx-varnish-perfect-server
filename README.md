@@ -31,6 +31,7 @@ You will also need a new mysql user other than root to login remotely to this ph
 `sudo mysql -uroot -p`<br>
 `CREATE USER 'mysqluser'@'localhost' IDENTIFIED BY 'mypassword';`<br>
 `GRANT ALL PRIVILEGES ON *.* TO 'mysqluser'@'localhost' WITH GRANT OPTION;`<br>
+`sudo ln -s /usr/share/phpmyadmin /usr/share/nginx/html`<br>
 <br>
 <b>Copy all databases from a remote phpmyadmin enabled mysql/mariadb server</b> : <br>
 On old server :<br>
