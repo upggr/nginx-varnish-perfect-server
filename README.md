@@ -55,6 +55,7 @@ Just head to http://your.ip:8080/phpmyadmin create a new database. Then while in
 No need for FTP access! Just use SFTP on port 22...But if you really want it:<br>
 `sudo nano /etc/vsftpd.allowed_users` <- add user here. Default port for ftp is 9921<br>
 Also `sudo nano /etc/ssh/sshd_config` <- Add to the end : `DenyUsers username`<br>
+`sudo usermod -a -G www-data username`<br>
 FTP server will run on port 9921<br>
 <br>
 

@@ -5,14 +5,9 @@ server {
         index index.php index.html index.htm index.nginx-debian.html;
         server_name _;
 
-location /sqladmin {
-                alias   /usr/share/phpmyadmin/;
-                try_files $uri $uri/ /index.php;
-        }
-
-location ~ ^/sqladmin(.+\.php)$  {
-        alias /usr/share/phpmyadmin$1;
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+ location ~ \.php$ {
+                             try_files $uri $uri/ /index.php;
+          fastcgi_split_path_info ^(.+\.php)(/.+)$;
         fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
         fastcgi_index index.php;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
